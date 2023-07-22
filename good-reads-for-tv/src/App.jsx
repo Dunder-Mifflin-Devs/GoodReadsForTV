@@ -2,9 +2,16 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Login from './Login'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  const [showLogin, setShowLogin] = useState(false);
+  
+  function handleOnClose() {
+    return setShowLogin(false)
+  }
 
   return (
     <>
@@ -28,6 +35,10 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+
+      {/* Modal */}
+      <button onClick={() => setShowLogin(true)}>Login</button>
+      <Login onClose={handleOnClose} visible={showLogin}/>
     </>
   )
 }
