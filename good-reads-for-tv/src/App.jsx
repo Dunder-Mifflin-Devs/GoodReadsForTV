@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import "../dist/output.css";
 import Login from "./Login";
+import Header from "./Header";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -27,12 +28,6 @@ function App() {
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
       </div>
       <h1>Vite + React</h1>
       <div className="card">
@@ -51,7 +46,7 @@ function App() {
       <div>
         <button onClick={() => setShowLogin(true)}>Login</button>
       </div>
-
+      <Header />
       <Login onClose={handleOnClose} visible={showLogin} />
     </>
   );
