@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Login({ visible, onClose }) {
   function handleOnClose(e) {
     if (e.target.id === "login") {
