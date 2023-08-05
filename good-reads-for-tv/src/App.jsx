@@ -1,15 +1,9 @@
 import { useState } from "react";
-import "../dist/output.css";
-import Login from "./components/Login";
 import Footer from "./components/Footer/Footer";
+import Header from "./components/Header";
+import "../src/index.css"
 
 function App() {
-
-  const [showLogin, setShowLogin] = useState(false);
-
-  function handleOnClose() {
-    return setShowLogin(false);
-  }
 
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -24,11 +18,7 @@ function App() {
   return (
     <>
       {/* Modal */}
-      <div>
-        <button onClick={() => setShowLogin(true)}>Login</button>
-      </div>
-
-      <Login onClose={handleOnClose} visible={showLogin} />
+      <Header />
       <Footer />
     </>
   );
