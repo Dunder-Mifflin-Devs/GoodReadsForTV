@@ -2,6 +2,7 @@ import { useState } from "react";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header";
 import "../src/index.css"
+import "../src/baseStyling.css"
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
     <>
       {/* Modal */}
       <Header />
+      
       <Footer />
     </>
   );
