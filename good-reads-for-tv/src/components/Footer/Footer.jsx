@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 const Footer = () => {
     return (
-        <footer className="w-full bg-[#7395B7] h-24 text-white flex justify-between items-center px-5">
+        <footer className="w-full bg-[#F2A365] h-24 text-white flex justify-between items-center px-5">
             <div className='flex gap-10'>
                 {/* <Link to={'/'}><img className={style.logo} src={logo} alt={logo} /></Link> */}
                 <h2 className='text-2xl'>GoodReadsForTV</h2>
