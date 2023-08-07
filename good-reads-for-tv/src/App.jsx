@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header";
+import Button from "./components/Button";
 import "../src/index.css"
 import "../src/baseStyling.css"
 
 function App() {
-
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -20,7 +20,7 @@ function App() {
     <>
       {/* Modal */}
       <Header />
-      
+        <Button text='hello'/>
       <Footer />
     </>
   );

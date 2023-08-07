@@ -1,10 +1,9 @@
-import { useState } from "react";
-import Login from "./Login";
+import {useState} from 'react';
+import Login from './Login';
 
 
 export default function Header() {
-
-    const [showLogin, setShowLogin] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
 
     function handleOnClose() {
       return setShowLogin(false);
@@ -26,8 +25,7 @@ export default function Header() {
                                 <li className="mr-14 text-2xl text-white hover:text-gray-200 tracking-tight">TV Shows</li>
                             </ul>
                         </div>
-                        <button className="dft-btn round">
-Sign Up      </button>
+                        <button className="dft-btn round">Sign Up</button>
                         <div>
                             <button className="text-lg text-white" onClick={() => setShowLogin(true)}>Login</button>
                         </div>
@@ -36,7 +34,8 @@ Sign Up      </button>
                 </div>
             </div>         
         </div>
-        {/* search module */}
+      </div>
+      {/* search module */}
     </div>
   );
 }
