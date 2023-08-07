@@ -1,0 +1,68 @@
+/* Used to keep the base styling and CSS variables in one place */
+
+
+:root {
+    /* --font-family-default: */
+    /* Subject to change after voting in  */
+    --font-lisu: 'Lisu Bosa', serif;
+    --font-nunito: 'Nunito', sans-serif;
+    --font-oswald: 'Oswald', sans-serif;
+    --font-raleway: 'Raleway', sans-serif;
+    --font-victor: 'Victor Mono', monospace;
+
+  /** Use [--variable-name] for whatever color you want to sub in your tailwind.  */
+  /** bg-[--black] would give the background */
+    --orange:#F2A365;
+    --orangeBorder: #c28251;
+
+    --blue: #7395B7;
+
+    --gray: #526980;
+    --grayBorder: #425466;
+    --modalGrey:#757575;
+
+    --black:#222831;
+
+    --white:#ECECEC;
+    --whiteBorder: #CCCCCC;
+
+    --yellow: #ffa629;
+
+}  
+
+.dft-btn{
+    border: 2px solid #c28251;
+    background-color: #F2A365;
+    padding: 0.3rem 0.7rem;
+    margin: 1rem
+}
+
+.round{
+  border-radius: 15px;
+}
+
+.sharp{
+  border-radius: 4px;
+}
+
+
+/* Custom font classes using the CSS variables */
+.font-lisu {
+  font-family: var(--font-lisu);
+}
+
+.font-nunito {
+  font-family: var(--font-nunito);
+}
+
+.font-oswald {
+  font-family: var(--font-oswald);
+}
+
+.font-raleway {
+  font-family: var(--font-raleway);
+}
+
+.font-victor {
+  font-family: var(--font-victor);
+}
