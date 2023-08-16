@@ -20,9 +20,17 @@ const SignupInput = () => {
   }
   return (
     <>
+<<<<<<< HEAD
       <form className="flex flex-col items-center justify-around bg-[#ECECEC] gap-2 p-2" onSubmit={handleSubmit}>
         <input
           className="bg-[#ffffff] text-black rounded-lg p-1"
+=======
+      <form 
+        className="flex flex-col items-center justify-around bg-[--white] gap-2 p-2" 
+        onSubmit={handleSubmit}>
+        <input
+          className="bg-[white] text-black rounded-lg p-1"
+>>>>>>> 95b2517 (Changed styling to the base style varibles)
           required
           type="text"
           placeholder="Name"
@@ -30,7 +38,11 @@ const SignupInput = () => {
           onChange={handleName}
         />
         <input
+<<<<<<< HEAD
           className="bg-[#ffffff] text-black rounded-lg p-1"
+=======
+          className="bg-[white] text-black rounded-lg p-1"
+>>>>>>> 95b2517 (Changed styling to the base style varibles)
           required
           type="email"
           placeholder="Email"
@@ -38,7 +50,11 @@ const SignupInput = () => {
           onChange={e => setEmail(e.target.value)}
         />
         <input
+<<<<<<< HEAD
           className="bg-[#ffffff] text-black rounded-lg p-1"
+=======
+          className="bg-[white] text-black rounded-lg p-1"
+>>>>>>> 95b2517 (Changed styling to the base style varibles)
           required
           type="password"
           placeholder="Password"
@@ -46,7 +62,11 @@ const SignupInput = () => {
           onChange={e => setPassword(e.target.value)}
         />
         <input
+<<<<<<< HEAD
           className="bg-[#ffffff] text-black rounded-lg p-1"
+=======
+          className="bg-[white] text-black rounded-lg p-1"
+>>>>>>> 95b2517 (Changed styling to the base style varibles)
           required
           type="password"
           placeholder="Confirm Password"
@@ -54,7 +74,11 @@ const SignupInput = () => {
           onChange={e => setConfirmPassword(e.target.value)}
         />
         <input
+<<<<<<< HEAD
           className="bg-[#F2A365] text-black rounded-lg p-1"
+=======
+          className="bg-[--orange] text-black rounded-lg p-1 hover:text-[white] hover:underline cursor-pointer"
+>>>>>>> 95b2517 (Changed styling to the base style varibles)
           disabled={!name || !email || !password || confirmPassword}
           type="submit"
           value="Sign Up"
@@ -64,4 +88,8 @@ const SignupInput = () => {
   );
 };
 
+<<<<<<< HEAD
 export default SignupInput;
+=======
+export default SignupInput;
+>>>>>>> 95b2517 (Changed styling to the base style varibles)
