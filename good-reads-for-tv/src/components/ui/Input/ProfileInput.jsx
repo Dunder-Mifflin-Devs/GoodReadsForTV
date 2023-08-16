@@ -86,7 +86,6 @@ const ProfileInput = () => {
           value={formData.userEmail}
           onChange={handleChange}
         />
-
         <input 
             className="bg-[--orange] text-black rounded-lg p-1 hover:text-[white] hover:underline cursor-pointer" 
             disabled 
