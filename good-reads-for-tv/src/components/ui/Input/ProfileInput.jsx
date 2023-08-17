@@ -38,9 +38,11 @@ const ProfileInput = () => {
 
   return (
     <>
-      <form className="flex flex-col items-center justify-around bg-[#ECECEC] gap-2 p-2" onSubmit={handleSubmit}>
+      <form 
+        className="flex flex-col items-center justify-around bg-[--white] gap-2 p-2" 
+        onSubmit={handleSubmit}>
         <input
-          className="bg-[#ffffff] text-black rounded-lg p-1 w-2/4"
+          className="bg-[white] text-black rounded-lg p-1 w-2/4"
           required
           type="text"
           placeholder="Name"
@@ -49,7 +51,7 @@ const ProfileInput = () => {
           onChange={handleChange}
         />
         <input
-          className="bg-[#ffffff] text-black rounded-lg p-1 w-2/4"
+          className="bg-[white] text-black rounded-lg p-1 w-2/4"
           required
           type="text"
           placeholder="Address"
@@ -58,7 +60,7 @@ const ProfileInput = () => {
           onChange={handleChange}
         />
         <input
-          className="bg-[#ffffff] text-black rounded-lg p-1 w-2/4"
+          className="bg-[white] text-black rounded-lg p-1 w-2/4"
           required
           type="tel"
           placeholder="Phone Number"
@@ -67,7 +69,7 @@ const ProfileInput = () => {
           onChange={handleChange}
         />
         <input
-          className="bg-[#ffffff] text-black rounded-lg p-1 w-2/4"
+          className="bg-[white] text-black rounded-lg p-1 w-2/4"
           required
           type="date"
           placeholder="Birthdate"
@@ -75,8 +77,8 @@ const ProfileInput = () => {
           value={formData.userBirthday}
           onChange={handleChange}
         />
-        <input
-          className="bg-[#ffffff] text-black rounded-lg p-1 w-2/4"
+         <input
+          className="bg-[white] text-black rounded-lg p-1 w-2/4"
           required
           type="email"
           placeholder="Email"
@@ -84,8 +86,12 @@ const ProfileInput = () => {
           value={formData.userEmail}
           onChange={handleChange}
         />
-
-        <input className="bg-[#F2A365] text-black rounded-lg p-1" disabled type="submit" value="Create Profile" />
+        <input 
+            className="bg-[--orange] text-black rounded-lg p-1 hover:text-[white] hover:underline cursor-pointer" 
+            disabled 
+            type="submit" 
+            value="Create Profile" 
+        />
       </form>
     </>
   );

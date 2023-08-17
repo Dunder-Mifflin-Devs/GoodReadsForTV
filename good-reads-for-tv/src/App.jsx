@@ -4,10 +4,6 @@ import Header from "./components/common/Header";
 import Button from "./components/ui/button/Button";
 import "./assets/styles/index.css"
 import "./assets/styles/baseStyling.css"
-import LoginInput from "./components/ui/Input/LoginInput";
-import ProfileInput from "./components/ui/Input/ProfileInput";
-import SearchInput from "./components/ui/Input/SearchInput";
-import SignupInput from "./components/ui/Input/SignupInput";
 
 function App() {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -25,10 +21,6 @@ function App() {
       {/* Modal */}
       <Header />
         <Button text='hello'/>
-      <LoginInput />
-      <ProfileInput />
-      <SearchInput />
-      <SignupInput />
       <Footer />
     </>
   );
