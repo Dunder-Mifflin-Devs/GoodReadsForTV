@@ -1,0 +1,1 @@
+ Utility functions and helpers that don't fit into a specific component or service but are used throughout the app

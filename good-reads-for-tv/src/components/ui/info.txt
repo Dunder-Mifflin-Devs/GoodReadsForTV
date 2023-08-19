@@ -1,0 +1,1 @@
+Components responsible for the overall layout of your app, like header, footer, and sidebar.

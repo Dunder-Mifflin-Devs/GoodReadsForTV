@@ -1,0 +1,1 @@
+This folder contains various subfolders that organize your UI components based on their functionality or type.

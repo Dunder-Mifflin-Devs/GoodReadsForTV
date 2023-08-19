@@ -1,0 +1,1 @@
+a UI component that displays a brief overview of a TV show

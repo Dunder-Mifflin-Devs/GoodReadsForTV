@@ -1,0 +1,1 @@
+This folder is used to store static assets like images, fonts, or any other files that are used in your application's UI.

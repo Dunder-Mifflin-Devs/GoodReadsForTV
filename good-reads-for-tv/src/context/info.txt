@@ -1,0 +1,1 @@
+This folder contains React context providers, which manage global state that can be accessed by various components. For example, AuthContext could manage user authentication status.

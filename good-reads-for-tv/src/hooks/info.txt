@@ -1,0 +1,1 @@
+Custom React hooks that encapsulate reusable logic that can be shared across multiple components.

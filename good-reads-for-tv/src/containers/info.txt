@@ -1,0 +1,1 @@
+These are smart components that connect state, logic, and data to the presentation components. Each subfolder here represents a different view or section of your app.
