@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import Login from './Login';
+import logo from '../../assets/images/logo.svg';
 
 export default function Header() {
   const [showLogin, setShowLogin] = useState(false);
@@ -13,8 +14,12 @@ export default function Header() {
       <div className="container p-2 px-4 mx-auto">
         <div className="flex justify-between items-center py-5">
           <div className="flex items-center">
-            <span className="bg-white mx-2 p-2 h-14 rounded-full">LOGO</span>
-            <h1 className="text-2xl">GoodReadsForTV</h1>
+            {/* <span className="bg-white mx-2 p-2 h-14 rounded-full">LOGO</span> */}
+            <img className="mx-2 mb-2 h-14" src={logo} />
+            <div className="flex flex-col">
+              <h1 className="text-2xl text-white font-lisu">Worth a Watch</h1>
+              <p className="text-white font-lisu">Every show is worth your time</p>
+            </div>
           </div>
           <div className="w-auto">
             <div className="flex flex-wrap items-center">
