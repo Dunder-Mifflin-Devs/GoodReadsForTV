@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Footer from "./components/common/Footer"
-import Header from "./components/common/Header";
+import Header from "./components/common/Nav/Header";
 import Button from "./components/ui/button/Button";
 import "./assets/styles/index.css"
 import "./assets/styles/baseStyling.css"
