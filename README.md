@@ -16,8 +16,8 @@ Welcome to Worth a Watch, the go-to platform for TV show enthusiasts to share th
 
 1. Clone the repo onto your local machine.
 2. Enter `npm install` to download and install the dependencies.
-3. Enter `npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch` to build the Tailwind config.
-4. Enter `npm start` to run the local server.
+3. Enter `npx tailwindcss -i ./src/assets/styles/index.css -o ./dist/output.css --watch` to build the Tailwind config.
+4. Enter `npm run dev` to run the local server.
 5. Access the site using the URL provided: `http://localhost:5173/`.
 
 ## Feedback:
