@@ -1,12 +1,20 @@
 import {useState} from 'react';
 import Login from './Login';
+import Signup from './Signup';
+import SearchInput from '../ui/Input/SearchInput'
 import logo from '../../assets/images/logo.svg';
+
 
 export default function Header() {
   const [showLogin, setShowLogin] = useState(false);
+  const [showSignup, setShowSignup] = useState(false);
 
   function handleOnClose() {
     return setShowLogin(false);
+  }
+
+  function handleClose() {
+    return setShowSignup(false);
   }
 
   return (
@@ -29,18 +37,23 @@ export default function Header() {
                   <li className="mr-14 text-2xl text-white hover:text-gray-200 tracking-tight">TV Shows</li>
                 </ul>
               </div>
-              <button className="dft-btn round">Sign Up</button>
+              <button 
+                className="dft-btn round"
+                onClick={() => setShowSignup(true)}
+                >Sign Up
+              </button>
               <div>
                 <button className="text-lg text-white" onClick={() => setShowLogin(true)}>
                   Login
                 </button>
               </div>
               <Login onClose={handleOnClose} visible={showLogin} />
+              <Signup onClose={handleClose} visible={showSignup} />
             </div>
           </div>
         </div>
+        <SearchInput />
       </div>
-      {/* search module */}
     </div>
   );
 }
