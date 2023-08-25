@@ -42,42 +42,42 @@ const Signup = ({ visible, onClose }) => {
     const data = { name, email, password, confirmPassword };
 
     fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        //Toast notification Login Successful
-    })
-    .catch(error => {
-        console.log(error);
-    });
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(data => {
+      console.log(data);
+      //Toast notification Login Successful
+  })
+  .catch(error => {
+      console.log(error);
+  });
 
-    setName('');
-    setEmail('');
-    setPassword('');
-    setConfirmPassword('');
+  setName('');
+  setEmail('');
+  setPassword('');
+  setConfirmPassword('');
 
-    navigate('Pass to Home page route /')
-  }
+  navigate('Pass to Home page route /')
+}
 
-  return (
-    <div 
-        id="login" 
-        onClick={handleClose}
-        className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex items-center justify-center"
-    >
-        <form 
-            className="flex flex-col items-center justify-around bg-[--white] gap-4 p-8 rounded-lg w-72" 
-            onSubmit={handleSubmit}>
-            <div className='flex items-center justify-around'>
-                <img className="mx-2 mb-2 h-14 bg-[--orange] rounded-lg" src={logo} />
-                <h1 className="font-semibold text-center text-xl text-gray-700">Worth-A-Watch</h1>
-            </div>
+return (
+  <div 
+      id="login" 
+      onClick={handleClose}
+      className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex items-center justify-center"
+  >
+      <form 
+          className="flex flex-col items-center justify-around bg-[--white] gap-4 p-8 rounded-lg w-72" 
+          onSubmit={handleSubmit}>
+          <div className='flex items-center justify-around'>
+              <img className="mx-2 mb-2 h-14 bg-[--orange] rounded-lg" src={logo} />
+              <h1 className="font-semibold text-center text-xl text-gray-700">Worth-A-Watch</h1>
+          </div>
             <input
             className="bg-[white] text-black rounded-lg p-1"
             required
