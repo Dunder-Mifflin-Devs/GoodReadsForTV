@@ -1,11 +1,12 @@
 import Logo from './Logo';
 import DropDown from './DropDown';
 import UserAccess from './UserAccess';
+import SearchInput from '../../ui/Input/SearchInput'
 
 export default function Header() {
 
   return (
-    <div className="bg-[var(--gray)] border-b border-gray-600 border-opacity-30 flex w-full">
+    <div className="bg-[var(--black)] border-b border-gray-600 border-opacity-30 flex w-full">
       <div className="container p-2 px-4 mx-auto">
         <div className="flex justify-between items-center py-5">
           <Logo />
@@ -16,8 +17,8 @@ export default function Header() {
             </div>
           </div>
         </div>
+        <SearchInput />
       </div>
-      {/* search module */}
     </div>
   );
 }

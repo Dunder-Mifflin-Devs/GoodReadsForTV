@@ -12,7 +12,7 @@ const SearchInput = () => {
   return (
     <>
       <form 
-        className="flex items-center justify-center bg-[--black] p-2" 
+        className="flex items-center justify-center w-full bg-[--black] p-2" 
         onSubmit={handleSubmit}>
         <input
           className="bg-[--gray] text-[white] rounded-l-lg w-2/4 p-1"
