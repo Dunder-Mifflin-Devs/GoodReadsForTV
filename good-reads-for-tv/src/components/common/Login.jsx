@@ -22,7 +22,7 @@ export default function Login({visible, onClose}) {
       >
           <div className='flex items-center justify-around'>
               <img className="mx-2 mb-2 h-14 bg-[--orange] rounded-lg" src={logo} />
-              <h1 className="font-semibold text-center text-xl text-gray-700">Worth-A-Watch</h1>
+              <h1 className="font-semibold text-center text-xl text-gray-700">Worth a Watch</h1>
           </div>
           <div className="flex flex-col justify-around gap-4 p-8">
             <input 

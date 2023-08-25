@@ -75,7 +75,7 @@ const Signup = ({ visible, onClose }) => {
             onSubmit={handleSubmit}>
             <div className='flex items-center justify-around'>
                 <img className="mx-2 mb-2 h-14 bg-[--orange] rounded-lg" src={logo} />
-                <h1 className="font-semibold text-center text-xl text-gray-700">Worth-A-Watch</h1>
+                <h1 className="font-semibold text-center text-xl text-gray-700">Worth a Watch</h1>
             </div>
             <input
             className="bg-[white] text-black rounded-lg p-1"
