@@ -1,3 +1,5 @@
+import logo from '../../assets/images/logo.svg';
+
 export default function Login({visible, onClose}) {
   function handleOnClose(e) {
     if (e.target.id === 'login') {
@@ -15,18 +17,30 @@ export default function Login({visible, onClose}) {
       onClick={handleOnClose}
       className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex items-center justify-center"
     >
-      <div className="bg-white p-2 rounded w-72">
-        <h1 className="font-semibold text-center text-xl text-gray-700">GoodReadsForTV</h1>
-        <p className="text-center text-gray-700 mb-5">Sign in</p>
-
-        <div className="flex flex-col">
-          <input type="text" className="border border-gray-700 p-2 rounded mb-5" placeholder="email@example.com" />
-          <input type="text" className="border border-gray-700 p-2 rounded mb-5" placeholder="********" />
-        </div>
-        <div className="text-center">
-          <button className="px-5 py-2 bg-gray-700 text-white rounded">Sign in</button>
-        </div>
-      </div>
+      <form 
+        className="flex flex-col items-center justify-around bg-[--white] gap-4 p-8 rounded-lg w-72" 
+      >
+          <div className='flex items-center justify-around'>
+              <img className="mx-2 mb-2 h-14 bg-[--orange] rounded-lg" src={logo} />
+              <h1 className="font-semibold text-center text-xl text-gray-700">Worth a Watch</h1>
+          </div>
+          <div className="flex flex-col justify-around gap-4 p-8">
+            <input 
+              type="text" 
+              className="bg-[white] text-black rounded-lg p-1" 
+              placeholder="email@example.com" />
+            <input 
+              type="text" 
+              className="bg-[white] text-black rounded-lg p-1" 
+              placeholder="********" />
+          </div>
+          <div className="text-center">
+            <button 
+              className="bg-[--orange] text-black rounded-lg px-6 py-1 hover:text-[white] hover:underline cursor-pointer">
+              Sign in
+            </button>
+          </div>
+      </form>
     </div>
   );
 }
