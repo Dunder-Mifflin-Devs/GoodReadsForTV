@@ -1,10 +1,13 @@
-import {useState} from 'react';
+// import {useState} from 'react';
+import { Route, Routes } from 'react-router-dom';
 import Header from './components/common/Nav/Header';
-import Body from './components/common/Body';
+// import Body from './components/common/Body';
 import Footer from './components/common/Footer';
-import Button from './components/ui/button/Button';
 import './assets/styles/index.css';
 import './assets/styles/baseStyling.css';
+import About from "./pages/about"
+import Contact from './pages/contact';
+import Dashboard from './pages/dashboard';
 
 function App() {
   // const [isModalOpen, setModalOpen] = useState(false);
@@ -20,7 +23,11 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col bg-[var(--black)]">
       <Header />
-      <Body className="flex-grow" />
+      <Routes>
+            <Route exact path='/' element={<Dashboard className="flex-grow"/>}></Route>
+            <Route exact path='/about' element={<About className="flex-grow"/>}></Route>
+            <Route exact path='/contact' element={<Contact className="flex-grow"/>}></Route>
+      </Routes>
       <Footer className="mt-auto" />
     </div>
   );

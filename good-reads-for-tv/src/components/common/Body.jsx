@@ -1,6 +1,6 @@
 import Feature from './Feature';
 
-export default function Header() {
+export default function Body() {
   return (
     <>
       <div className="flex flex-grow flex-row flex-wrap">

@@ -1,5 +1,5 @@
 export const AboutUs = () => {
-    return(
+    return (
         <div>
             <h1>Who are we?</h1>
             <p>Worth a Watch is a site dedicated to allowing people to share in their love of episodic TV shows! Wether through old media or streaming, we want people to be able to look up information on their favorite shows as well as share comment and review them.
@@ -18,5 +18,7 @@ export const AboutUs = () => {
                 </ul>
             </p>
         </div>
-)
+    )
 }
+
+export default AboutUs

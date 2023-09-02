@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="w-full bg-[--blue] h-24 text-[--white] flex justify-between items-center px-5">
       <div className="flex gap-10">
         {/* <Link to={'/'}><img className={style.logo} src={logo} alt={logo} /></Link> */}
-        <h2 className="text-2xl">GoodReadsForTV</h2>
+        <a href="/"><h2 className="text-2xl">GoodReadsForTV</h2></a>
       </div>
       <div className="">
         <NavLink to="/" className="hover:text-[--orange] hover:underline text-base px-10">
@@ -18,6 +18,12 @@ const Footer = () => {
         </NavLink>
         <NavLink to="/tv" className="hover:text-[--orange] hover:underline text-base px-10">
           TV Shows
+        </NavLink>
+        <NavLink to="/about" className="hover:text-[--orange] hover:underline text-base px-10">
+          About Us
+        </NavLink>
+        <NavLink to="/contact" className="hover:text-[--orange] hover:underline text-base px-10">
+          Contact
         </NavLink>
       </div>
     </footer>
