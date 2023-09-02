@@ -2,7 +2,7 @@ import featurePlaceholder from './../../assets/images/featurePlaceholder.jpg';
 
 export default function Feature({poster, title}) {
   return (
-    <div className="p-8 text-white flex flex-col w-1/6 ">
+    <div className="p-8 text-white flex flex-col w-80">
       <div>
         <img
           src={poster.img || featurePlaceholder}
