@@ -7,6 +7,7 @@ import './assets/styles/index.css';
 import './assets/styles/baseStyling.css';
 import About from "./pages/about"
 import Contact from './pages/contact';
+import Error404 from './pages/Error404';
 import Dashboard from './pages/dashboard';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route exact path='/' element={<Dashboard className="flex-grow"/>}></Route>
             <Route exact path='/about' element={<About className="flex-grow"/>}></Route>
             <Route exact path='/contact' element={<Contact className="flex-grow"/>}></Route>
+            <Route exact path='/404' element={<Error404 className="flex-grow"/>}></Route>
       </Routes>
       <Footer className="mt-auto" />
     </div>
