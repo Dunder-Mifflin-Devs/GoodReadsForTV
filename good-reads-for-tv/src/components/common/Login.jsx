@@ -1,46 +1,112 @@
+import React, {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 import logo from '../../assets/images/logo.svg';
 
-export default function Login({visible, onClose}) {
-  function handleOnClose(e) {
+const Login = ({visible, onClose}) => {
+  if (!visible) {
+    return null;
+  }
+
+  function handleClose(e) {
     if (e.target.id === 'login') {
       onClose();
     }
   }
 
-  if (!visible) {
-    return null;
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({email: '', password: ''});
+
+  function handleChange(e) {
+    setFormData(prevFormData => {
+      return {
+        ...prevFormData,
+        [e.target.name]: e.target.value,
+      };
+    });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    // Submit to backend URL with axios
+    axios
+      .post('apiUrlString', {name, email, password, confirmPassword})
+      .then(response => {
+        console.log(response);
+        // Toast notification Login Successful
+      })
+      .catch(err => {
+        console.log(err);
+      });
+
+    // Submit to backend with fetch alternative
+    const apiUrl = 'apiUrlString';
+    const data = {name, email, password, confirmPassword};
+    fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        // Toast notification Login Successful
+      })
+      .catch(error => {
+        console.log(error);
+      });
+
+    setName('');
+    setEmail('');
+    setPassword('');
+    setConfirmPassword('');
+
+    navigate('Pass to Home page route /');
   }
 
   return (
     <div
       id="login"
-      onClick={handleOnClose}
+      onClick={handleClose}
       className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex items-center justify-center"
     >
-      <form 
-        className="flex flex-col items-center justify-around bg-[--white] gap-4 p-8 rounded-lg w-72" 
+      <form
+        className="flex flex-col items-center justify-around bg-[--white] gap-4 p-8 rounded-lg w-72"
+        onSubmit={handleSubmit}
       >
-          <div className='flex items-center justify-around'>
-              <img className="mx-2 mb-2 h-14 bg-[--orange] rounded-lg" src={logo} />
-              <h1 className="font-semibold text-center text-xl text-gray-700">Worth a Watch</h1>
-          </div>
-          <div className="flex flex-col justify-around gap-4 p-8">
-            <input 
-              type="text" 
-              className="bg-[white] text-black rounded-lg p-1" 
-              placeholder="email@example.com" />
-            <input 
-              type="text" 
-              className="bg-[white] text-black rounded-lg p-1" 
-              placeholder="********" />
-          </div>
-          <div className="text-center">
-            <button 
-              className="bg-[--orange] text-black rounded-lg px-6 py-1 hover:text-[white] hover:underline cursor-pointer">
-              Sign in
-            </button>
-          </div>
+        <div className="flex items-center justify-around">
+          <img className="mx-2 mb-2 h-14 bg-[--orange] rounded-lg" src={logo} />
+          <h1 className="font-semibold text-center text-xl text-gray-700">Worth a Watch</h1>
+        </div>
+        <input
+          name="email"
+          className="bg-[white] text-black rounded-lg p-1"
+          required
+          type="email"
+          placeholder="Email"
+          value={formData.email}
+          onChange={handleChange}
+        />
+        <input
+          name="password"
+          className="bg-[white] text-black rounded-lg p-1"
+          required
+          type="password"
+          placeholder="Password"
+          value={formData.password}
+          onChange={handleChange}
+        />
+        <input
+          className="bg-[--orange] text-black rounded-lg px-6 py-1 hover:text-[white] hover:underline cursor-pointer"
+          type="submit"
+          value="Sign In"
+        />
       </form>
     </div>
   );
-}
+};
+
+export default Login;
