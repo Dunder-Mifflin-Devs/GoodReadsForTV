@@ -129,6 +129,10 @@ const Signup = ({visible, onClose}) => {
                 : 'rgba(255,0,0,0.1)',
           }}
         />
+        {formData.confirmPassword !== '' &&
+          (formData.password !== formData.confirmPassword && (
+            <span className="text-red-600 text-xs leading-none">Passwords don't match</span>
+          ))}
         <input
           className="bg-[--orange] text-black rounded-lg px-6 py-1 hover:text-[white] hover:underline cursor-pointer"
           type="submit"
