@@ -5,6 +5,7 @@ import SearchInput from '../../ui/Input/SearchInput'
 
 export default function Header() {
 
+
   return (
     <div className="bg-[var(--black)] border-b border-gray-600 border-opacity-30 flex w-full">
       <div className="container p-2 px-4 mx-auto">
