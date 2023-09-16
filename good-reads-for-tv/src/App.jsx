@@ -5,6 +5,7 @@ import Footer from './components/common/Footer';
 import './assets/styles/index.css';
 import './assets/styles/baseStyling.css';
 
+//These show warnings but are imported in the Routes.jsx file
 import { Route,
   useRoutes,
   Link,
