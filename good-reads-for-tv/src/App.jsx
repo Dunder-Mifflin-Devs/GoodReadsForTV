@@ -1,13 +1,17 @@
-import { Route, Routes } from 'react-router-dom';
+// import {useState} from 'react';
 import Header from './components/common/Nav/Header';
 // import Body from './components/common/Body';
 import Footer from './components/common/Footer';
 import './assets/styles/index.css';
 import './assets/styles/baseStyling.css';
-import About from "./pages/about"
-import Contact from './pages/contact';
-import Error404 from './pages/Error404';
-import Dashboard from './pages/dashboard';
+
+//These show warnings but are imported in the Routes.jsx file
+import { Route,
+  useRoutes,
+  Link,
+  Outlet,
+  useParams } from 'react-router-dom';
+import { Routes } from './Routes.jsx'
 
 function App() {
   // const [isModalOpen, setModalOpen] = useState(false);
@@ -23,12 +27,7 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col bg-[var(--black)]">
       <Header />
-      <Routes>
-            <Route exact path='/' element={<Dashboard className="flex-grow"/>}></Route>
-            <Route exact path='/about' element={<About className="flex-grow"/>}></Route>
-            <Route exact path='/contact' element={<Contact className="flex-grow"/>}></Route>
-            <Route exact path='/404' element={<Error404 className="flex-grow"/>}></Route>
-      </Routes>
+      <Routes/>
       <Footer className="mt-auto" />
     </div>
   );
