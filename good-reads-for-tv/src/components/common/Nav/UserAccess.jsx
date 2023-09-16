@@ -7,14 +7,6 @@ export default function UserAccess() {
   const [showLogin, setShowLogin] = useState(false);
   const [showSignup, setShowSignup] = useState(false);
 
-  function handleOnClose() {
-    return setShowLogin(false);
-  }
-  
-  function handleClose() {
-    return setShowSignup(false);
-  }
-
   return (
     <div className="flex flex-wrap items-center">
         <button 
@@ -23,12 +15,14 @@ export default function UserAccess() {
           Sign Up
         </button>
         <div>
-        <button className="text-lg text-white" onClick={() => setShowLogin(true)}>
-            Login
+        <button 
+          className="text-lg text-white" 
+          onClick={() => setShowLogin(true)}>
+          Login
         </button>
         </div>
-        <Login onClose={handleOnClose} visible={showLogin} />
-        <Signup onClose={handleClose} visible={showSignup}/>
+        {showLogin && <Login setShowLogin={setShowLogin} />} {/*visable should be renamed showLogin for clarity*/}
+        {showSignup && <Signup setShowSignup={setShowSignup} />}
     </div>
   );
 }
