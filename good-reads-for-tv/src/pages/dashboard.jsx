@@ -12,19 +12,19 @@ const Dashboard = () => {
           <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 2'} />
         </NavLink>
         <NavLink to="/details" className="w-64">
-          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 2'} />
+          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 3'} />
         </NavLink>
         <NavLink to="/details" className="w-64">
-          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 2'} />
+          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 4'} />
         </NavLink>
         <NavLink to="/details" className="w-64">
-          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 2'} />
+          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 5'} />
         </NavLink>
         <NavLink to="/details" className="w-64">
-          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 2'} />
+          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 6'} />
         </NavLink>
         <NavLink to="/details" className="w-64">
-          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 2'} />
+          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 7'} />
         </NavLink>
       </div>
     </>
