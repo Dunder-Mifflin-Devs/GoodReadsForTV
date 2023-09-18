@@ -1,20 +1,34 @@
-import Feature from "../components/common/Feature";
+import Feature from '../components/common/Feature';
+import { NavLink } from 'react-router-dom';
 
 const Dashboard = () => {
   return (
     <>
-        <div className="flex flex-grow flex-row flex-wrap">
-          <Feature poster="{{ img: '', alt: '' }}" title={'Movie 1'} />
-          <Feature poster="{{ img: '', alt: '' }}" title={'Movie 2'} />
-          <Feature poster="{{ img: '', alt: '' }}" title={'Movie 3'} />
-          <Feature poster="{{ img: '', alt: '' }}" title={'Movie 4'} />
-          <Feature poster="{{ img: '', alt: '' }}" title={'Movie 5'} />
-          <Feature poster="{{ img: '', alt: '' }}" title={'Movie 6'} />
-          <Feature poster="{{ img: '', alt: '' }}" title={'Movie 7'} />
-          <Feature poster="{{ img: '', alt: '' }}" title={'Movie 8'} />
-        </div>
+      <div className="flex flex-grow flex-row flex-wrap gap-6">
+        <NavLink to="/details" className="w-64">
+          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 1'} className=""/>
+        </NavLink>
+        <NavLink to="/details" className="w-64">
+          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 2'} />
+        </NavLink>
+        <NavLink to="/details" className="w-64">
+          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 2'} />
+        </NavLink>
+        <NavLink to="/details" className="w-64">
+          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 2'} />
+        </NavLink>
+        <NavLink to="/details" className="w-64">
+          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 2'} />
+        </NavLink>
+        <NavLink to="/details" className="w-64">
+          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 2'} />
+        </NavLink>
+        <NavLink to="/details" className="w-64">
+          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 2'} />
+        </NavLink>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;

@@ -1,8 +1,9 @@
 import featurePlaceholder from './../../assets/images/featurePlaceholder.jpg';
+import {NavLink} from 'react-router-dom';
 
 export default function Feature({poster, title}) {
   return (
-    <div className="p-8 text-white flex flex-col w-80">
+    <div className="text-white flex flex-col">
       <div>
         <img
           src={poster.img || featurePlaceholder}
@@ -10,7 +11,11 @@ export default function Feature({poster, title}) {
           className="sharp object-cover"
         ></img>
       </div>
-      <h2 className="font-lisu text-[--white] truncate text-ellipsis overflow-hidden">{title || 'Placeholder'}</h2>
+      {title && (
+        <h2 className="font-lisu truncate text-ellipsis overflow-hidden hover:text-[--orange] hover:underline pt-4">
+          {title}
+        </h2>
+      )}
     </div>
   );
 }
