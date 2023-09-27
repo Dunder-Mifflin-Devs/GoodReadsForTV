@@ -13,7 +13,7 @@ const Details = () => {
       </section>
       <section className="flex flex-col justify-between">
         <div>
-          <ShowInfo />          
+          <MovieInfo />          
         </div>
         <div className="my-auto text-left">
           <ReviewHolder />          
