@@ -11,7 +11,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: './node_modules/vitest-react/setup.ts',
+    setupFiles: './setup.ts',
     silent: true,
     reporters: 'verbose',
   },
