@@ -1,4 +1,4 @@
-import featurePlaceholder from './../../assets/images/featurePlaceholder.jpg';
+import featurePlaceholder from '../../assets/images/featurePlaceholder.jpg';
 import {NavLink} from 'react-router-dom';
 
 export default function Feature({poster, title}) {
