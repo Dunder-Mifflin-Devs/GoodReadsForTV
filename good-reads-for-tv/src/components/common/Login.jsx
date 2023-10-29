@@ -3,8 +3,15 @@ import {useState} from 'react';
 import logo from '../../assets/images/logo.svg';
 import {RiCloseCircleFill} from 'react-icons/ri';
 // import axios from 'axios'
+import { useGoogleLogin } from '@react-oauth/google';
+import { FcGoogle } from 'react-icons/fc';
 
 const Login = ({setShowLogin}) => {
+
+  //Google Oauth Login
+  const login = useGoogleLogin({
+    onSuccess: tokenResponse => console.log(tokenResponse),
+  });
 
   function handleClose(e) {
     if (e.target.id === 'login') {
@@ -103,6 +110,11 @@ const Login = ({setShowLogin}) => {
           value="Sign In"
           disabled={!formData.email || !formData.password}
         />
+        <div 
+          className="bg-[--orange] text-black rounded-lg px-6 py-1 hover:text-[white] hover:underline cursor-pointer flex items-center gap-2"
+          onClick={() => login()}>
+          <FcGoogle /> Log in with Google
+        </div>
       </form>
     </div>
   );
