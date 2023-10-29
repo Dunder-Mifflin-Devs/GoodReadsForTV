@@ -148,7 +148,7 @@ const Signup = ({setShowSignup}) => {
           disabled={!formData.name || !formData.email || !formData.password || !formData.confirmPassword}
         />
         <div 
-          className="bg-[--orange] text-black rounded-lg px-6 py-1 hover:text-[white] hover:underline cursor-pointer"
+          className="bg-[--orange] text-black rounded-lg px-6 py-1 hover:text-[white] hover:underline cursor-pointer flex items-center gap-2"
           onClick={() => login()}>
           <FcGoogle /> Log in with Google
         </div>
