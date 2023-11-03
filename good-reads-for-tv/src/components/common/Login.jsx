@@ -3,15 +3,15 @@ import {useState} from 'react';
 import logo from '../../assets/images/logo.svg';
 import {RiCloseCircleFill} from 'react-icons/ri';
 // import axios from 'axios'
-import { useGoogleLogin } from '@react-oauth/google';
+// import { useGoogleLogin } from '@react-oauth/google';
 import { FcGoogle } from 'react-icons/fc';
 
 const Login = ({setShowLogin}) => {
 
   //Google Oauth Login
-  const login = useGoogleLogin({
-    onSuccess: tokenResponse => console.log(tokenResponse),
-  });
+  // const login = useGoogleLogin({
+  //   onSuccess: tokenResponse => console.log(tokenResponse),
+  // });
 
   function handleClose(e) {
     if (e.target.id === 'login') {
