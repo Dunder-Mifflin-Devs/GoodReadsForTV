@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import {render, screen} from '@testing-library/react';
 import Dashboard from './dashboard';
-import Feature from '../components/common/Feature'
+import Feature from '../components/common/Feature';
 
 test('Dashboard renders successfully', () => {
   render(<Dashboard />);
@@ -11,7 +11,7 @@ test('Dashboard renders successfully', () => {
   expect(element).toBeInTheDocument();
 });
 
-// test('Dashboard renders Feature', () => {
+// test('Dashboard renders Feature component', () => {
 //   render(<Dashboard />);
 
 //   const element = screen.getByText(Feature);
