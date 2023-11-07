@@ -12,6 +12,7 @@
     "test:watch": "vitest src"
   },
   "dependencies": {
+    "@react-oauth/google": "^0.11.1",
     "axios": "^1.5.1",
     "embla-carousel-react": "^8.0.0-rc14",
     "react": "^18.2.0",
