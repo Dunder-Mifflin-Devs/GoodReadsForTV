@@ -1,12 +1,17 @@
 import Feature from '../components/common/Feature';
-import {NavLink} from 'react-router-dom';
+
+import {NavLink, BrowserRouter, MemoryRouter} from 'react-router-dom';
 import Carousel from '../components/common/Carousel';
 
 const Dashboard = () => {
   return (
-    <section className="sandbox__carousel flex-grow">
-      <Carousel />
-    </section>
+    <>
+      <MemoryRouter>
+        <section className="sandbox__carousel flex-grow">
+           <Carousel />
+        </section>
+      </MemoryRouter>
+    </>
   );
 };
 
