@@ -4,6 +4,8 @@ import '../../assets/styles/embla.css';
 import Feature from './Feature';
 import {NavLink} from 'react-router-dom';
 
+
+//poster and title will be dynamic based on the information that feature pulls in
 const poster = '';
 const title = '';
 
@@ -23,34 +25,34 @@ export const Carousel = () => {
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           <NavLink to="/details" className="w-24 embla__slide">
-            <Feature poster={poster} title={'First'} />
+            <Feature poster={poster} title={title}/>
           </NavLink>
           <NavLink to="/details" className="w-24 embla__slide">
-            <Feature poster={poster} title={'Second'} />
+            <Feature poster={poster} title={title} />
           </NavLink>
           <NavLink to="/details" className="w-24 embla__slide">
-            <Feature poster={poster} title={'Third'} />
+            <Feature poster={poster} title={title} />
           </NavLink>
           <NavLink to="/details" className="w-24 embla__slide">
-            <Feature poster={poster} title={'Fourth'} />
+            <Feature poster={poster} title={title} />
           </NavLink>
           <NavLink to="/details" className="w-24 embla__slide">
-            <Feature poster={poster} title={'Fifth'} />
+            <Feature poster={poster} title={title} />
           </NavLink>
           <NavLink to="/details" className="w-24 embla__slide">
-            <Feature poster={poster} title={'Sixth'} />
+            <Feature poster={poster} title={title} />
           </NavLink>
           <NavLink to="/details" className="w-24 embla__slide">
-            <Feature poster={poster} title={'Seventh'} />
+            <Feature poster={poster} title={title} />
           </NavLink>
           <NavLink to="/details" className="w-24 embla__slide">
-            <Feature poster={poster} title={'Eighth'} />
+            <Feature poster={poster} title={title} />
           </NavLink>
           <NavLink to="/details" className="w-24 embla__slide">
-            <Feature poster={poster} title={'Ninth'} />
+            <Feature poster={poster} title={title} />
           </NavLink>
           <NavLink to="/details" className="w-24 embla__slide">
-            <Feature poster={poster} title={'Tenth'} />
+            <Feature poster={poster} title={title} />
           </NavLink>
         </div>
       </div>
