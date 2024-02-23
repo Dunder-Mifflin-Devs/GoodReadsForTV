@@ -9,8 +9,8 @@ const Dashboard = () => {
     const fetchData = async amount => {
       try {
         const response = await getRandomShows(amount);
-        setData(response);
-        console.log(response);
+        setData(response.results);
+        console.log(response.results);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
