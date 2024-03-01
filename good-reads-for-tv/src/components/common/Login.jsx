@@ -64,6 +64,7 @@ const Login = ({setShowLogin}) => {
         setFormData((prevFormData) => ({
           ...prevFormData,
           password: ''
+          
         }));
       } else {
         // setUser(true)
@@ -91,7 +92,7 @@ const Login = ({setShowLogin}) => {
     <div
       id="login"
       onClick={handleClose}
-      className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex flex-col items-center justify-center z-50"
+      className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex flex-col items-center justify-center"
     >
       <div className='flex items-center justify-end w-72 p-2'>
         <RiCloseCircleFill 
