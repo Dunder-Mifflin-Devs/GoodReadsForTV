@@ -1,8 +1,8 @@
-import {useState} from 'react';
-// import {useNavigate} from 'react-router-dom';
+import {useState, useEffect} from 'react';
+import {useNavigate} from 'react-router-dom';
 import logo from '../../assets/images/logo.svg';
 import {RiCloseCircleFill} from 'react-icons/ri';
-// import axios from 'axios'
+import axios from 'axios'
 // import { useGoogleLogin } from '@react-oauth/google';
 import { FcGoogle } from 'react-icons/fc';
 
@@ -13,15 +13,27 @@ const Login = ({setShowLogin}) => {
   //   onSuccess: tokenResponse => console.log(tokenResponse),
   // });
 
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    window.sessionStorage.removeItem('userName')
+    window.sessionStorage.removeItem('userId')
+  }, [])
+
+  // Use useState to manage form data
+  const [formData, setFormData] = useState({
+   email: '',
+   password: '',
+ });
+
+ const [loading, setLoading] = useState(false);
+
   function handleClose(e) {
     if (e.target.id === 'login') {
       setShowLogin(false);
     }
   }
 
-  // const navigate = useNavigate();
-
-  const [formData, setFormData] = useState({email: '', password: ''});
 
   function handleChange(e) {
     setFormData(prevFormData => {
@@ -32,38 +44,47 @@ const Login = ({setShowLogin}) => {
     });
   }
 
-  function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (formData.password !== formData.password) {
-      setFormData(prevFormData => {
-        return {
-          ...prevFormData,
-          password: '',
-        };
-      });
-      return;
-    } 
+    setLoading(true);
 
-    // try {
-      // const res = await axios.post('api url', { name, email, password });
-      // console.log(res);
+    const email = formData.email;
+    const password = formData.password;
+
+    try {
+      const res = await axios.post('https://dmd-waw-dev.onrender.com/usermgmt/local-login', {email, password});
+      console.log(res);
       // console.log(res.data);
       // console.log(res.data.message)
       // console.log(res.data.success)
       
-      // if (res.data.success === false) {
-      // } else {
-      //   window.sessionStorage.setItem('userName', res.data.userName)
-      //   window.sessionStorage.setItem('userId', res.data.id)
-      //   navigate('/home');
-      //   // Redirect or show success message
-      // }
+      if (res.data.success === false) {
+        // toast(res.data.message)
+        setFormData((prevFormData) => ({
+          ...prevFormData,
+          password: ''
+        }));
+      } else {
+        // setUser(true)
+        window.sessionStorage.setItem('userName', res.data.userName)
+        window.sessionStorage.setItem('userId', res.data.id)
+       
+        setFormData((prevFormData) => ({
+          ...prevFormData,
+          password: ''
+        }));
+        navigate('/');
+      }
 
-  //   } catch (err) {
-  //     console.error(err);
-  //     // Handle error, show error message, etc.
-  //   }
+      setLoading(false);
+
+    } catch (err) {
+      console.error(err);
+      setLoading(false);
+      // Handle error, show error message, etc.
+    }
+   
   };
 
   return (
@@ -104,15 +125,18 @@ const Login = ({setShowLogin}) => {
           value={formData.password}
           onChange={handleChange}
         />
-        <input
+        <button
           className="bg-[--orange] text-black rounded-lg px-6 py-1 hover:text-[white] hover:underline cursor-pointer"
           type="submit"
           value="Sign In"
           disabled={!formData.email || !formData.password}
-        />
+        >
+          {loading ? 'Logging in...' : 'Log In'}
+        </button>
         <div 
           className="bg-[--orange] text-black rounded-lg px-6 py-1 hover:text-[white] hover:underline cursor-pointer flex items-center gap-2"
-          onClick={() => login()}>
+          // onClick={() => login()}
+          >
           <FcGoogle /> Log in with Google
         </div>
       </form>
