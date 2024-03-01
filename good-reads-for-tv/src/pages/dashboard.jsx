@@ -1,32 +1,29 @@
-import Feature from '../components/common/Feature';
-import { NavLink } from 'react-router-dom';
+import {useState, useEffect} from 'react';
+import Carousel from '../components/common/Carousel';
+import {getRandomShows} from '../axios';
 
 const Dashboard = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async amount => {
+      try {
+        const response = await getRandomShows(amount);
+        setData(response.results);
+        console.log(response.results);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <>
-      <div className="flex flex-grow flex-row flex-wrap gap-6">
-        <NavLink to="/details" className="w-64">
-          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 1'} className=""/>
-        </NavLink>
-        <NavLink to="/details" className="w-64">
-          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 2'} />
-        </NavLink>
-        <NavLink to="/details" className="w-64">
-          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 3'} />
-        </NavLink>
-        <NavLink to="/details" className="w-64">
-          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 4'} />
-        </NavLink>
-        <NavLink to="/details" className="w-64">
-          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 5'} />
-        </NavLink>
-        <NavLink to="/details" className="w-64">
-          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 6'} />
-        </NavLink>
-        <NavLink to="/details" className="w-64">
-          <Feature poster="{{ img: '', alt: '' }}" title={'TV Show 7'} />
-        </NavLink>
-      </div>
+      <section className="sandbox__carousel flex-grow">
+        <Carousel />
+      </section>
     </>
   );
 };
