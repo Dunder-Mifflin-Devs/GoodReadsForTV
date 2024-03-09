@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://dmd-waw-dev.onrender.com/media/omdb/';
+const BASE_URL = 'https://dmd-waw-dev.onrender.com/';
 
 const headers = {
   'Content-Type': 'application/json',

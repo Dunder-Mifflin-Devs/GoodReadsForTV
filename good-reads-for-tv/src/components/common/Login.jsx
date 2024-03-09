@@ -20,13 +20,14 @@ const Login = ({setShowLogin}) => {
     window.sessionStorage.removeItem('userId')
   }, [])
 
-  // Use useState to manage form data
   const [formData, setFormData] = useState({
    email: '',
    password: '',
  });
 
  const [loading, setLoading] = useState(false);
+
+ const [passwordMatch, setPasswordMatch] = useState(true);
 
   function handleClose(e) {
     if (e.target.id === 'login') {
@@ -55,35 +56,26 @@ const Login = ({setShowLogin}) => {
     try {
       const res = await axios.post('https://dmd-waw-dev.onrender.com/usermgmt/local-login', {email, password});
       console.log(res);
-      // console.log(res.data);
-      // console.log(res.data.message)
-      // console.log(res.data.success)
+      console.log(res.config.data);
+      console.log(res.status)
+      console.log()
       
-      if (res.data.success === false) {
-        // toast(res.data.message)
-        setFormData((prevFormData) => ({
-          ...prevFormData,
-          password: ''
-          
-        }));
-      } else {
-        // setUser(true)
-        window.sessionStorage.setItem('userName', res.data.userName)
-        window.sessionStorage.setItem('userId', res.data.id)
-       
+      if (res.status === 200) {
+        console.log('You are logged in')
         setFormData((prevFormData) => ({
           ...prevFormData,
           password: ''
         }));
-        navigate('/');
+        setShowLogin(false);
+        navigate('/contact')
       }
 
       setLoading(false);
 
     } catch (err) {
       console.error(err);
+      setPasswordMatch(false)
       setLoading(false);
-      // Handle error, show error message, etc.
     }
    
   };
@@ -126,6 +118,9 @@ const Login = ({setShowLogin}) => {
           value={formData.password}
           onChange={handleChange}
         />
+        {passwordMatch === false &&(
+            <span className="text-red-600 text-xs leading-none">Error Logging In</span>
+          )}
         <button
           className="bg-[--orange] text-black rounded-lg px-6 py-1 hover:text-[white] hover:underline cursor-pointer"
           type="submit"
