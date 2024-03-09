@@ -55,10 +55,6 @@ const Login = ({setShowLogin}) => {
 
     try {
       const res = await axios.post('https://dmd-waw-dev.onrender.com/usermgmt/local-login', {email, password});
-      console.log(res);
-      console.log(res.config.data);
-      console.log(res.status)
-      console.log()
       
       if (res.status === 200) {
         console.log('You are logged in')
@@ -67,7 +63,7 @@ const Login = ({setShowLogin}) => {
           password: ''
         }));
         setShowLogin(false);
-        navigate('/contact')
+        navigate('/')
       }
 
       setLoading(false);
