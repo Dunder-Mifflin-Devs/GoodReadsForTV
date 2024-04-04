@@ -1,14 +1,12 @@
 import {useState} from 'react';
-// import {useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import logo from '../../assets/images/logo.svg';
 import {RiCloseCircleFill} from 'react-icons/ri';
-// import axios from 'axios'
 // import { useGoogleLogin } from '@react-oauth/google';
-import { FcGoogle } from 'react-icons/fc';
-
+import {FcGoogle} from 'react-icons/fc';
+import {postSignup} from '../../axios';
 
 const Signup = ({setShowSignup}) => {
-
   //Google Oauth Login
   // const login = useGoogleLogin({
   //   onSuccess: tokenResponse => console.log(tokenResponse),
@@ -20,8 +18,7 @@ const Signup = ({setShowSignup}) => {
     }
   }
 
-
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({name: '', email: '', password: '', confirmPassword: ''});
 
@@ -34,9 +31,9 @@ const Signup = ({setShowSignup}) => {
     });
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    
+
     if (formData.password !== formData.confirmPassword) {
       setFormData(prevFormData => {
         return {
@@ -45,28 +42,17 @@ const Signup = ({setShowSignup}) => {
           confirmPassword: '',
         };
       });
+
       return;
-    } 
+    }
 
     try {
-      // const res = await axios.post('api url', { name, email, password });
-      // console.log(res);
-      // console.log(res.data);
-      // console.log(res.data.message)
-      // console.log(res.data.success)
-      
-      // if (res.data.success === false) {
-      // } else {
-      //   window.sessionStorage.setItem('userName', res.data.userName)
-      //   window.sessionStorage.setItem('userId', res.data.id)
-      //   navigate('/home');
-      //   // Redirect or show success message
-      // }
+      const response = await postSignup(formData);
+      console.log(response);
 
-    } catch (err) {
-      console.error(err);
-      // Handle error, show error message, etc.
-    }
+      setShowSignup(false);
+      navigate('/');
+    } catch (err) {}
   };
 
   return (
@@ -75,11 +61,8 @@ const Signup = ({setShowSignup}) => {
       onClick={handleClose}
       className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex flex-col items-center justify-center z-50"
     >
-      <div className='flex items-center justify-end w-72 p-2'>
-        <RiCloseCircleFill 
-          onClick={() => setShowSignup(false)}
-          className='text-[--orange] text-2xl cursor-pointer'
-        />
+      <div className="flex items-center justify-end w-72 p-2">
+        <RiCloseCircleFill onClick={() => setShowSignup(false)} className="text-[--orange] text-2xl cursor-pointer" />
       </div>
       <form
         className="flex flex-col items-center justify-around bg-[--white] gap-4 p-8 rounded-lg w-72"
@@ -137,19 +120,19 @@ const Signup = ({setShowSignup}) => {
                 : 'rgba(255,0,0,0.1)',
           }}
         />
-        {formData.confirmPassword !== '' &&
-          (formData.password !== formData.confirmPassword && (
-            <span className="text-red-600 text-xs leading-none">Passwords don't match</span>
-          ))}
+        {formData.confirmPassword !== '' && formData.password !== formData.confirmPassword && (
+          <span className="text-red-600 text-xs leading-none">Passwords don't match</span>
+        )}
         <input
           className="bg-[--orange] text-black rounded-lg px-6 py-1 hover:text-[white] hover:underline cursor-pointer"
           type="submit"
           value="Sign Up"
           disabled={!formData.name || !formData.email || !formData.password || !formData.confirmPassword}
         />
-        <div 
+        <div
           className="bg-[--orange] text-black rounded-lg px-6 py-1 hover:text-[white] hover:underline cursor-pointer flex items-center gap-2"
-          onClick={() => login()}>
+          onClick={() => login()}
+        >
           <FcGoogle /> Log in with Google
         </div>
       </form>
